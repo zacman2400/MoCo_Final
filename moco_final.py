@@ -9,7 +9,7 @@ def moco_run(ksp,coord,dcf,spokes_per_bin,T):
     T=500
     spokes_per_bin=ksp.shape[1]//500
     res_scale=0.5
-    nf_arr = np.sqrt(np.sum(coord[0][0, :, :] ** 2, axis=1))
+    nf_arr = np.sqrt(np.sum(coord[0, :, :] ** 2, axis=1))
     RO = np.sum(nf_arr < np.max(nf_arr) * res_scale)
     im_testa0,mps0,kspa0,coorda0,dcfa0=gen_template(ksp,coord,dcf,RO,spokes_per_bin)
 
